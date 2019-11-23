@@ -1,0 +1,133 @@
+h1 {
+    animation: appear 2s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.recomendation {
+    background-color: #D9E5E3;
+    padding: 1em;
+    border: 0.5em #c2ccca solid;
+    width: 30ch;
+    box-sizing: border-box;
+    margin: 1em 0;
+    display: inline-block;
+    transition: box-shadow 0.5s ease-in, transform .5s ease-out;
+    /* box-shadow 0.5s ease-in-out; */
+    transition-delay: 1s, 0s;
+    animation: kick .5s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    position: relative;
+}
+
+@keyframes kick {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 1em;
+    }
+}
+
+.recomendation::before {
+    content: '"';
+    font-size: 10em;
+    position: absolute;
+    color: #bbb;
+    line-height: 0.8;
+}
+
+.recomendation>p {
+    position: relative;
+}
+
+.recomendation:nth-of-type(even) {
+    float: left;
+    margin-right: 40px;
+}
+
+#content-wrapper>p::first-letter {
+    font-size: 200%;
+    color: rgb(56, 31, 59);
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    margin-right: 0.2ch;
+    line-height: 1;
+}
+
+
+.recomendation:nth-of-type(odd) {
+    float: right;
+    margin-left: 40px;
+}
+
+.recomendation:hover,
+.recomendation:focus {
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+    animation-play-state: paused;
+    transition-delay: 0s, 1s;
+
+}
+
+.recomendation:nth-of-type(odd):hover,
+.recomendation:nth-of-type(odd):focus {
+    transform: scale(1.2) rotate(4deg);
+}
+
+.recomendation:nth-of-type(even):hover,
+.recomendation:nth-of-type(even):focus {
+    transform: scale(1.2) rotate(-4deg);
+}
+
+
+cite {
+    float: right;
+    font-style: italic
+}
+
+.table-skills {
+    margin: 1em 0;
+    border-collapse: separate;
+    border-spacing: 0.25em;
+}
+
+.table-skills thead tr th {
+    background-color: #3C1D3D;
+}
+
+.table-skills td {
+    background-color: #EEE;
+}
+
+.table-skills th,
+.table-skills td {
+    padding: 1em;
+}
+
+.table-skills th {
+    color: white;
+    font-weight: bold;
+}
+
+.table-skills tbody tr th {
+    background-color: #851944;
+}
+
+.table-skills [colspan] {
+    text-align: center;
+    font-style: italic;
+}
+
+.table-skills [rowspan] {
+    vertical-align: middle;
+}

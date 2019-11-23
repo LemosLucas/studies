@@ -1,0 +1,368 @@
+main {
+    width: 100%;
+}
+
+body {
+    perspective: 4px;
+    perspective-origin: 50% 160px;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.center {
+    color: rgb(250, 255, 250);
+    text-align: center;
+    border-bottom: 0.25rem solid black;
+    margin: auto;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+img {
+    width: 150px;
+}
+
+.saudacao {
+    color: #99A;
+    line-height: 1;
+}
+
+.saudacao em {
+    display: inline-block;
+    transform: rotate(-5deg) skew(-20deg);
+}
+
+.saudacao-inicio {
+    color: #889;
+}
+
+.saudacao-highligh-font-size {
+    font-size: 3rem;
+}
+
+.saudacao em {
+    position: relative;
+    animation: fluctuate 1s infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes fluctuate {
+    from {
+        top: -10px;
+    }
+
+    to {
+        top: -20px;
+    }
+}
+
+.saudacao-ultima-linha {
+    text-align: center;
+    display: block;
+}
+
+.saudacao strong {
+    color: #000;
+}
+
+.saudacao em {
+    color: #851944;
+}
+
+.first-section {
+    background-color: rgb(122, 36, 68);
+    padding: 1.25rem;
+    position: relative;
+    transform-style: preserve-3d;
+
+}
+
+.second-section {
+    color: black;
+}
+
+.saudacao:hover em {
+    animation-play-state: paused;
+}
+
+.space-between-sections {
+    padding: 3em 1.5em;
+}
+
+.button {
+    padding: 1.25em 0;
+    background-color: rgb(122, 36, 68);
+    color: rgb(250, 255, 250);
+    border: 0.25em solid black;
+    text-decoration: underline;
+    width: 50ch;
+    display: block;
+    margin: auto;
+    margin-top: 3em;
+    box-shadow: 0 0 1em black, inset 0 0 1em white;
+    transition: 0.5s ease-in-out;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    box-shadow: 0 0 1em #FA9;
+    background-color: #C54974;
+    color: white;
+}
+
+.third-section {
+    background-color: rgb(56, 31, 59);
+    background-image: linear-gradient(135deg, transparent, transparent 14px, rgba(0, 0, 0, 0.4) 14px, rgba(0, 0, 0, 0.4) 15px, transparent 15px, transparent);
+    background-size: 20px 20px;
+    background-attachment: fixed;
+}
+
+.image-jobs-done {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.image-jobs-done li {
+    flex: 1;
+    border: 0.25em solid black;
+}
+
+.image-jobs-done li:nth-child(odd) {
+    order: 2;
+}
+
+.image-jobs-done li:first-child {
+    order: 2;
+    transform: scale(1.2);
+}
+
+.image-jobs-done img {
+    width: 100%;
+    display: block;
+}
+
+.title-position {
+    text-align: left;
+}
+
+.fourth-section {
+    background-color: rgb(153, 153, 153);
+    position: relative;
+    background-image: linear-gradient(45deg, transparent, transparent 14px, rgba(255, 255, 255, 0.4) 14px, rgba(255, 255, 255, 0.4) 15px, transparent 15px, transparent);
+    /* background-repeat: no-repeat; */
+    background-size: 20px 20px;
+    background-attachment: fixed;
+}
+
+.fourth-section p {
+    margin: 0;
+}
+
+.fourth-section li {
+    margin: 2em 0;
+}
+
+.blog-posts {
+    text-align: left;
+}
+
+.blog-posts li a {
+    color: #FCF;
+}
+
+.fifth-section {
+    background-color: black;
+}
+
+main {
+    padding: 0;
+    float: none;
+}
+
+.blog-posts li:hover .latest-post,
+.blog-posts li:focus .latest-post {
+    display: block;
+    background-color: #F2FFFC;
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    height: 18em;
+    padding: 1em;
+    color: black;
+    left: 30%;
+}
+
+.latest-post {
+    display: none;
+}
+
+.blog-posts li:hover,
+.blog-posts li:focus {
+    background-color: #F2FFFC;
+}
+
+.blog-posts li {
+    padding: 0.5em;
+    width: 30%;
+}
+
+.profile-picture {
+    border-radius: 10% 50% / 50% 10%;
+    box-shadow: 0 0 1em black;
+}
+
+
+.twitter-banner {
+    position: absolute;
+    background-color: rgb(56, 31, 59);
+    border-top: 0.2em solid black;
+    border-bottom: 0.2em solid black;
+    padding: 0.7em 0;
+    line-height: 1em;
+    color: #F2FFFC;
+    top: 0;
+    right: 0;
+    /* height = border + line-height + padding = 2.8em */
+    width: 14em;
+    box-sizing: border-box;
+    transform-origin: 0 0;
+    transform: translateX(calc(0.707 * (2.8em - 14em) + 14em)) translateY(calc(-0.707 * 2.8em)) rotate(45deg);
+    animation: keywords-appear 0.5s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    /* forces the style application begore the animation begins */
+
+}
+
+.first-section ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.palavra-home {
+    font-family: 'Shadows Into Light', cursive;
+    position: absolute;
+    font-weight: bold;
+    color: rgba(213, 68, 126, 0.7);
+    animation: keywords-appear 2s;
+}
+
+.palavra-home li {
+    font-size: 400%;
+}
+
+.eficiencia {
+    top: 40%;
+    right: 30%;
+    transform: translate(-50%, -50%) rotate(20deg) translateZ(2px);
+    opacity: 0.8;
+}
+
+.boas-praticas {
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%) rotate(-20deg) translateZ(2.5px);
+    opacity: 0.8;
+}
+
+.codigo-limpo {
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%, -50%) rotate(10deg) translateZ(1px);
+    opacity: 0.6;
+}
+
+.css3 {
+    top: 0%;
+    left: 10%;
+    transform: translate(-50%, -50%) rotate(-10deg) translateZ(-1px);
+    opacity: 0.4;
+}
+
+.html5 {
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(40deg) translateZ(1.5px);
+    opacity: 0.8;
+}
+
+.javascript {
+    top: 70%;
+    right: 10%;
+    transform: translate(-50%, -50%) rotate(- 40deg) translateZ(2.5px);
+    opacity: 0.6;
+}
+
+.acessibilidade {
+    top: 45%;
+    right: 37%;
+    transform: translate(-50%, -50%) rotate(35deg) translateZ(1.5px);
+    opacity: 0.8;
+}
+
+.responsivo {
+    top: 30%;
+    right: 30%;
+    transform: translate(-50%, -50%) rotate(-35deg) translateZ(1px);
+    opacity: 0.6;
+}
+
+.otimizacoes {
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(5deg) translateZ(2px);
+    opacity: 0.8;
+}
+
+.agilidade {
+    top: 80%;
+    right: 25%;
+    transform: translate(-50%, -50%) rotate(-5deg) translateZ(0px);
+    opacity: 0.4;
+}
+
+.design {
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%) translateZ(-1px);
+    opacity: 0.4;
+}
+
+.modal-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    text-align: center;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+    font-size: 2em;
+}
+
+.modal-dialog p {
+    color: black;
+    padding: 10% 3%;
+    margin: 0;
+}
+
+@keyframes keywords-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.001);
+    }
+}

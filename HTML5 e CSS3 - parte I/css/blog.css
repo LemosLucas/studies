@@ -1,0 +1,20 @@
+article {
+    margin: 40px 0;
+    border-bottom: 1px #ccc solid;
+    padding-bottom: 30px;
+}
+
+.more-information {
+    font-size: 25px;
+    text-decoration: none;
+    color: #851944;
+    text-align: center;
+    display: block;
+    background-color: #E6E7E8;
+    padding: 8px;
+    margin: 16px;
+}
+
+.more-information a:focus {
+    color: #851944;
+}

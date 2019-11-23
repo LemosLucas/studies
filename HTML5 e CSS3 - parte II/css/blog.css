@@ -1,0 +1,24 @@
+article + article {
+    margin: 40px 0;
+    /* border-bottom: 1px #ccc solid; */
+    padding-top: 30px;
+    background-image: linear-gradient(to right, transparent, #ccc, transparent);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.more-information {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #851944;
+    text-align: center;
+    display: block;
+    background-color: #E6E7E8;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+.more-information a:focus {
+    color: #851944;
+}

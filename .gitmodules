@@ -1,0 +1,9 @@
+[submodule "Projeto"]
+	path = Projeto
+	url = /Users/guedespro18/Documents/Dev/studies/Projeto Conclusao Front-end/aluraconf
+[submodule "WebDesign Responsive/workshop-web-design-responsivo"]
+	path = WebDesign Responsive/workshop-web-design-responsivo
+	url = /Users/guedespro18/Documents/Dev/studies/WebDesign Responsivo/workshop-web-design-responsivo
+[submodule "jQuery - parte I e II/alura-typerr"]
+	path = jQuery - parte I e II/alura-typerr
+	url = /Users/guedespro18/Documents/Dev/studies/jQuery - parte I e II/alura-typer

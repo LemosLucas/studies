@@ -1,0 +1,104 @@
+legend,
+[for="message"] {
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+
+[name="name"],
+[name="email"],
+textarea {
+    width: 100%;
+    border: 1px solid #bbb;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#content-wrapper {
+    width: 75%;
+}
+
+form {
+    width: 100%;
+}
+
+textarea,
+input {
+    font-family: inherit;
+    font-size: 0.8em;
+}
+
+textarea:focus,
+[type="text"]:focus,
+[type="email"]:focus {
+    background-color: rgba(255, 255, 204, 0.2);
+    outline: none;
+}
+
+textarea:invalid,
+[name="name"]:invalid,
+[name="email"]:invalid {
+    box-shadow: 0 0 3px red;
+}
+
+button {
+    color: white;
+    border: none;
+    background-color: #3C1D3D;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin-top: 15px;
+    margin-left: auto;
+    display: block;
+    box-sizing: border-box;
+}
+
+button:hover,
+button:focus {
+    background-color: #8C1D3D;
+    outline: none;
+}
+
+[name="otherSubjectText"] {
+    display: none;
+}
+
+[name="subject"]:checked~[name="otherSubjectText"] {
+    display: inline-block;
+}
+
+label[for="name"],
+label[for="email"] {
+    position: relative;
+}
+
+label[for="name"]:after,
+label[for="email"]:after {
+    content: '';
+    background-position: center;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: rgb(122, 36, 68);
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+
+label[for="name"]:after {
+    background-image: url('../assets/usuario.png');
+}
+
+label[for="email"]:after {
+    background-image: url('../assets/email.png');
+}
+
+#name,
+#email {
+    width: calc(100% - 2em);
+    position: relative;
+    left: 2em;
+    margin-left: 1em;
+}
