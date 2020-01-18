@@ -11,15 +11,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "reflect-metadata": "0.1.13",
-    "systemjs": "^6.1.9",
-    "@babel/polyfill": "^7.8.3"
+    "@babel/polyfill": "^7.8.3",
+    "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-transform-modules-systemjs": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
-    "@babel/plugin-proposal-decorators": "^7.8.3"
+    "webpack": "^4.41.5"
   }
 }
