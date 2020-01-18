@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel app-src -d app --source-maps",
-    "watch": "babel app-src -d app --source-maps --watch"
+    "build-dev": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +16,9 @@
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@babel/plugin-transform-modules-systemjs": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
-    "webpack": "^4.41.5"
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
