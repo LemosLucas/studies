@@ -1,4 +1,16 @@
 {
-    "presets":["es2017"],
-    "plugins" : ["transform-decorators-legacy"]
+    "presets": [
+        [
+            "@babel/preset-env"
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-transform-modules-systemjs",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ]
+    ]
 }
