@@ -1,5 +1,10 @@
 import { NegociacaoController } from './controllers/NegociacaoController.js';
 import { Negociacao } from './domain/index.js';
+// Notação abaixo, sem o './' faz com que o webpack já procure dentro de 'node_modules'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+// Importação de um css qualquer custom
+import '../css/meu.css';
 
 const controller = new NegociacaoController();
 const negociacao = new Negociacao(new Date(), 1, 200);
