@@ -2,6 +2,7 @@ const path = require('path');
 const extractCssPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
 let plugins = [];
 
@@ -9,6 +10,14 @@ let plugins = [];
 plugins.push(new extractCssPlugin({
     filename: 'styles.css'
 }));
+
+plugins.push(
+    // Fará com o jQuery esteja disponível em escopo global para outros módulos
+    new webpack.ProvidePlugin({
+        '$': 'jquery/dist/jquery.js',
+        'jQuery': 'jquery/dist/jquery.js'
+    })
+);
 
 module.exports = {
     entry: "./app-src/app.js",
