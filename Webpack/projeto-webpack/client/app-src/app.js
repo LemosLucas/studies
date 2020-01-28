@@ -3,6 +3,7 @@ import { Negociacao } from './domain/index.js';
 // Notação abaixo, sem o './' faz com que o webpack já procure dentro de 'node_modules'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+import '@babel/polyfill/dist/polyfill.js';
 // Importação de um css qualquer custom
 import '../css/meu.css';
 // Importação do módulo modal do bootstrap.
@@ -28,5 +29,5 @@ const config = {
     body
 };
 
-fetch('http://localhost:3000/negociacoes', config)
+fetch(`${SERVICE_URL}/negociacoes`, config)
     .then(() => console.log('Dado enviado com sucesso'));

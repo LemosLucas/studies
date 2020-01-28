@@ -3,9 +3,23 @@ const extractCssPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
 let plugins = [];
 
+
+plugins.push(new webpack.DefinePlugin({}));
+
+plugins.push(new htmlWebpackPlugin({
+    hash: true,
+    minify: {
+        html5: true,
+        collapseWhitespace: true,
+        removeComments: true
+    },
+    filename: 'index.html',
+    template: __dirname + '/main.html'
+}));
 
 plugins.push(new extractCssPlugin({
     filename: 'styles.css'
@@ -19,15 +33,23 @@ plugins.push(
     })
 );
 
-module.exports = {
-    entry: "./app-src/app.js",
+let config = {
+    entry: {
+        app: "./app-src/app.js",
+        vendor: ['jquery', 'bootstrap', 'reflect-metadata']
+    },
     output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        publicPath: 'dist'
+        filename: "[name].js",
+        path: path.resolve(__dirname, "dist")
+        // publicPath: 'dist' // Will no longer be needed after we inserted the 'html-webpack-plugin'
     },
     optimization: {
-        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+        // Config. abaixo faz com que o bundle gerado seja separado em 'chunks'. A decisão de quando criar um novo 'chunk'
+        // pode ser vista em https://webpack.js.org/plugins/split-chunks-plugin/ 
+        splitChunks: {
+            chunks: 'all'
+        }
     },
     module: {
         rules: [
@@ -65,4 +87,23 @@ module.exports = {
         ]
     },
     plugins
+}
+
+module.exports = (env, argv) => {
+    let SERVICE_URL;
+    if (argv.mode) {
+        // Only enter here if it is different from 'undefined'
+        if (argv.mode === 'production') {
+            SERVICE_URL = 'http://endereco-sua-api';
+            console.log(`SERVICE_URL: ${SERVICE_URL}`);
+        } else {
+            SERVICE_URL = 'http://localhost:3000';
+            console.log(`SERVICE_URL: ${SERVICE_URL}`);
+        }
+
+        config.plugins[0].definitions.SERVICE_URL = JSON.stringify(SERVICE_URL);
+        console.log(config.plugins[0]);
+    }
+
+    return config;
 }

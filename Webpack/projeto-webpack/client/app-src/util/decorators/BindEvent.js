@@ -1,3 +1,4 @@
+// import { Reflect } from "../../../node_modules/reflect-metadata/Reflect";
 import { obrigatorio } from '../../util/index.js';
 
 export function bindEvent(
