@@ -1,4 +1,5 @@
 import React from 'react';
+import './Tabela.css';
 
 
 export default class Tabela extends React.Component {
@@ -10,7 +11,7 @@ export default class Tabela extends React.Component {
         return (
             <table className="centered highlight">
                 <TableHead />
-                <TableBody autores={autores} removeAutor={removeAutor}/>
+                <TableBody autores={autores} removeAutor={removeAutor} />
             </table>
         );
     }
@@ -32,11 +33,11 @@ const TableHead = () => {
 const TableBody = ({ autores, removeAutor }) => {
     const linhas = autores.map((autor, index) => {
         return (
-            <tr key={index}>
+            <tr key={autor.id}>
                 <td>{autor.nome}</td>
                 <td>{autor.livro}</td>
                 <td>{autor.preco}</td>
-                <td><button className="waves-effect waves-light btn indigo ligthen-2" onClick={() => removeAutor(index)}>Remover</button></td>
+                <td><button className="waves-effect waves-light btn indigo ligthen-2" onClick={() => removeAutor(autor.id)}>Remover</button></td>
             </tr>
         );
     })

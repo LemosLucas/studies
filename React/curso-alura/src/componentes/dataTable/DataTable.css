@@ -1,0 +1,8 @@
+.list {
+    font-size: 2em;
+    display: block;
+    border-bottom: 1px solid black;
+    margin-bottom: 1em;
+    text-align: center;
+    padding: 0.5em 1em;
+}

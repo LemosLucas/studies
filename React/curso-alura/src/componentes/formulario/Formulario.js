@@ -1,12 +1,38 @@
 import React from 'react';
+import './Formulario.css';
+import FormValidator from '../../utils/FormValidator.js';
+import PopUp from '../../utils/PopUp.js';
 
 export default class Formulario extends React.Component {
     constructor(props) {
         super(props);
+        this.validador = new FormValidator([
+            {
+                campo: 'nome',
+                metodo: 'isEmpty',
+                esperado: false,
+                mensagem: 'Entre com um nome'
+            },
+            {
+                campo: 'livro',
+                metodo: 'isEmpty',
+                esperado: false,
+                mensagem: 'Entre com um livro'
+            },
+            {
+                campo: 'preco',
+                metodo: 'isInt',
+                esperado: true,
+                args: [{ min: 0, max: 9999 }],
+                mensagem: 'Entre com um preço'
+            }
+        ]);
+
         this.stateInicial = {
             nome: '',
             livro: '',
-            preco: ''
+            preco: '',
+            validacao: this.validador.valido()
         }
 
         this.state = this.stateInicial;
@@ -21,8 +47,23 @@ export default class Formulario extends React.Component {
     }
 
     handleFormSubmit = () => {
-        this.props.adicionaNovoAutor(this.state);
-        this.setState(this.stateInicial);
+
+        const validacao = this.validador.valida(this.state);
+
+        if (validacao.isValid) {
+            this.props.adicionaNovoAutor(this.state);
+            this.setState(this.stateInicial);
+        } else {
+            const { nome, livro, preco } = validacao;
+            const campos = [nome, livro, preco];
+
+            const camposInvalidos = campos.filter(campo => campo.isInvalid);
+
+            //Exibir msg de erro para cada campo invalido
+            camposInvalidos.forEach(campoInvalido => {
+                PopUp.exibeMensagem('error', campoInvalido.message);
+            });
+        }
     }
 
     render() {
